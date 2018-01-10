@@ -11,7 +11,8 @@ services:
        MYSQL_DATABASE: wordpress
        MYSQL_USER: wordpress
        MYSQL_PASSWORD: wordpress
-
+     networks:
+       - apinet
    wordpress:
      depends_on:
        - db
@@ -23,5 +24,9 @@ services:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: wordpress
        WORDPRESS_DB_PASSWORD: wordpress
+     networks:
+       - apinet
+networks:
+    apinet:
 volumes:
     db_data:
