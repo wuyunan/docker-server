@@ -1,6 +1,6 @@
 version: "3"
 services:
-  
+
     wordpress:
      depends_on:
        - db
@@ -16,7 +16,7 @@ services:
        WORDPRESS_DB_PASSWORD: wordpress
      networks:
        - apinet
-   db:
+    db:
      image: mysql:5.7
      volumes:
        - db_data:/var/lib/mysql
