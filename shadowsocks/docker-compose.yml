@@ -1,0 +1,15 @@
+version: "3"
+services:
+
+    shadowsocks:
+      image: vimagick/shadowsocks-libev
+      ports:
+        - "443:8388"
+      environment:
+        - PASSWORD=wuyunan+
+      restart: always
+      networks:
+        - ssservice
+
+networks:
+    ssservice:
