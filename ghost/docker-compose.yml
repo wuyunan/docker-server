@@ -1,0 +1,27 @@
+version: "3"
+services:
+
+    ghost: 
+      image: daocloud.io/daocloud/dao-ghost:latest 
+      links: 
+        - db:mysql 
+      ports: 
+        - "2368" 
+      volumes:
+        - /<path-to-your-volume>:/data
+      environment:
+        - GHOST_ROOT_URL=http://<your-blog-url>
+      restart: always 
+    db: 
+      image: mysql 
+      environment: 
+        - MYSQL_ROOT_PASSWORD=example 
+        - MYSQL_DATABASE=ghost
+        - MYSQL_USER=ghost
+        - MYSQL_PASSWORD=ghost_db_password
+      restart: always
+
+networks:
+    apinet:
+volumes:
+    db_data:
