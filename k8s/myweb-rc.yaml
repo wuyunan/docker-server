@@ -1,4 +1,4 @@
-kind: RecplicationController
+kind: ReplicationController
 metadata: 
   name: myweb
 spec:
