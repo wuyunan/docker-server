@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: myweb
-        image: kubeguide/tocat-app:v1
+        image: kubeguide/tomcat-app:v1
         ports:
         - containerPort: 8080
         env:
