@@ -11,7 +11,7 @@ spec:
         app: myweb
     spec:
       containers:
-        - name: myweb
+      - name: myweb
         image: kubeguide/tocat-app:v1
         ports:
         - containerPort: 8080
