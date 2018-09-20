@@ -5,5 +5,8 @@ metadata:
 spec:
   ports:
     - port: 8080
+    name: service-port
+    - port: 8005
+    name: shutdown-port
   selector:
     tier: frontend
