@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: tomcat-service
 spec:
+  type: NodePort
   ports:
     - port: 8080
-      name: service-port
-    - port: 8005
-      name: shutdown-port
+      nodePort: 310002
   selector:
     tier: frontend
