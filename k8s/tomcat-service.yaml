@@ -6,6 +6,6 @@ spec:
   type: NodePort
   ports:
     - port: 8080
-      nodePort: 310002
+      nodePort: 31002
   selector:
     tier: frontend
