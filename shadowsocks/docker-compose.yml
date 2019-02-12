@@ -1,15 +1,14 @@
 version: "3"
+
 services:
-
-    shadowsocks:
-      image: vimagick/shadowsocks-libev
-      ports:
-        - "443:8388"
-      environment:
-        - PASSWORD=wuyunan+
-      restart: always
-      networks:
-        - ssservice
-
+  shadowsocks:
+    container_name: shadowsocks
+    image: oddrationale/docker-shadowsocks
+    ports:
+      - "443:8989"
+    restart: always
+    command: -s 0.0.0.0 -p 8989 -k wuyunan+ -m aes-256-cfb
+    networks:
+      - ssservice
 networks:
-    ssservice:
+  ssservice:
