@@ -7,7 +7,7 @@ echo -e "\033[44;37m ==========         \033[44;37;1mPull Code       \033[0m\033
 gitlabpath="$HOME/Documents/gitlab"
 
 
-pullPlatform(){
+doPullPlatform(){
     cd "${gitlabpath}"
     for project in $(ls)
     do
@@ -27,13 +27,8 @@ pullPlatform(){
     done
 }
 
-pullPlatform 
-# pullPlatform rn-
-# pullPlatform ncwz-
-# pullPlatform qingniu-
-# pullPlatform we-
-# pullPlatform qingteng-
-# pullPlatform crowdsource-
+doPullPlatform 
+
 
 
 echo -e "\033[44;37m ==========            \033[44;37;1mEnd            \033[0m\033[44;37m========== \033[0m"
