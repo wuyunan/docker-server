@@ -1,1 +1,0 @@
-vultr-cli server list
