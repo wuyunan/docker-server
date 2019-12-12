@@ -1,3 +1,4 @@
+#!/bin/bash
 SUBID=`vultr-cli server list|awk '{if($1!="ID"){print $1}}'`
 echo "Destory" $SUBID
 
