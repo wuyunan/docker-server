@@ -12,3 +12,5 @@ spark="spark-2.4.4-bin-hadoop2.7"
 spark_version="spark-2.4.4"
 scala="scala-2.12.8"
 scala_version="2.12.8"
+apache_mirror="http://mirror.bit.edu.cn/apache"
+

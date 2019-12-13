@@ -3,8 +3,6 @@
 # url:www.qingteng.info
 . ./_head.sh
 
-apache_mirror="http://mirror.bit.edu.cn/apache"
-
 cd $work_dir/_src
 # install hadoop
 wget $apache_mirror/hadoop/common/$hadoop/$hadoop.tar.gz
