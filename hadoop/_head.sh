@@ -1,9 +1,9 @@
 #!/bin/bash
 # author:wuyunan
 # url:www.qingteng.info
-
-work_dir="~/work"
 user="parallels"
+work_dir=/home/$user/work
+
 hadoop="hadoop-3.2.1"
 zookeeper="zookeeper-3.4.14"
 hbase="hbase-1.4.12"
