@@ -26,7 +26,7 @@
     </property>
     <property>
         <name>yarn.resourcemanager.zk-address</name>
-        <value>c0:2181,c1:2181</value>
+        <value>node1:2181,node2:2181</value>
         <description>ZooKeeper服务的地址，多个地址使用逗号隔开</description>
     </property>
     <property>
@@ -41,11 +41,11 @@
     </property>
     <property>
         <name>yarn.resourcemanager.webapp.address.rm1</name>
-        <value>c0:8088</value>
+        <value>node1:8088</value>
     </property>
     <property>
         <name>yarn.resourcemanager.webapp.address.rm2</name>
-        <value>c1:8088</value>
+        <value>node2:8088</value>
     </property>
     <property>
         <name>yarn.resourcemanager.cluster-id</name>
@@ -54,12 +54,12 @@
         </property>
     <property>
         <name>yarn.resourcemanager.hostname.rm1</name>
-        <value>c0</value>
+        <value>node1</value>
         <description>主机名</description>
     </property>
     <property>
         <name>yarn.resourcemanager.hostname.rm2</name>
-        <value>c1</value>
+        <value>node2</value>
         <description>主机名</description>
     </property>
     <property>
@@ -117,7 +117,7 @@
     </property>
     <property>
         <name>yarn.log.server.url</name>
-        <value>http://c0:19888/jobhistory/logs</value>
+        <value>http://node1:19888/jobhistory/logs</value>
         <discription> 配置日志服务器的地址</discription>
     </property>
     <property>
@@ -127,7 +127,7 @@
     </property>
     <property>
         <name>yarn.nodemanager.log-dirs</name>
-        <value>/home/work/_data/hadoop-3.1.2/yarn/container-logs/</value>
+        <value>~/work/_data/hadoop-3.1.2/yarn/container-logs/</value>
         <discription>nodemanager存放container日志的本地路径</discription>
     </property>
     <property>

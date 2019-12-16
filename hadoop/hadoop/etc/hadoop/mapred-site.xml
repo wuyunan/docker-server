@@ -13,9 +13,7 @@
   See the License for the specific language governing permissions and
   limitations under the License. See accompanying LICENSE file.
 -->
-
 <!-- Put site-specific property overrides in this file. -->
-
 <configuration>
     <property>
         <name>mapreduce.framework.name</name>
@@ -45,15 +43,15 @@
     <property>
         <name>mapreduce.application.classpath</name>
         <value>
-          /home/work/_app/hadoop-3.1.2/etc/hadoop,
-          /home/work/_app/hadoop-3.1.2/share/hadoop/common/*,
-          /home/work/_app/hadoop-3.1.2/share/hadoop/common/lib/*,
-          /home/work/_app/hadoop-3.1.2/share/hadoop/hdfs/*,
-          /home/work/_app/hadoop-3.1.2/share/hadoop/hdfs/lib/*,
-          /home/work/_app/hadoop-3.1.2/share/hadoop/mapreduce/*,
-          /home/work/_app/hadoop-3.1.2/share/hadoop/mapreduce/lib/*,
-          /home/work/_app/hadoop-3.1.2/share/hadoop/yarn/*,
-          /home/work/_app/hadoop-3.1.2/share/hadoop/yarn/lib/*        
+          ~/work/_app/hadoop-3.2.1/etc/hadoop,
+          ~/work/_app/hadoop-3.2.1/share/hadoop/common/*,
+          ~/work/_app/hadoop-3.2.1/share/hadoop/common/lib/*,
+          ~/work/_app/hadoop-3.2.1/share/hadoop/hdfs/*,
+          ~/work/_app/hadoop-3.2.1/share/hadoop/hdfs/lib/*,
+          ~/work/_app/hadoop-3.2.1/share/hadoop/mapreduce/*,
+          ~/work/_app/hadoop-3.2.1/share/hadoop/mapreduce/lib/*,
+          ~/work/_app/hadoop-3.2.1/share/hadoop/yarn/*,
+          ~/work/_app/hadoop-3.2.1/share/hadoop/yarn/lib/*        
         </value>
     </property>
 </configuration>

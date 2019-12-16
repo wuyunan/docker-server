@@ -17,18 +17,13 @@
   <property>
     <name>yarn.scheduler.capacity.maximum-applications</name>
     <value>10000</value>
-    <description>
-      系统中可以同时处于运行和挂起状态的最大应用程序数。
-    </description>
+    <description>系统中可以同时处于运行和挂起状态的最大应用程序数。</description>
   </property>
 
   <property>
     <name>yarn.scheduler.capacity.maximum-am-resource-percent</name>
     <value>0.5</value>
-    <description>
-      群集中可用于运行应用程序主机的最大资源百分比 - 控制并发活动应用程序的数量。
-每个队列的限制与其队列容量和用户限制成正比。
-    </description>
+    <description>群集中可用于运行应用程序主机的最大资源百分比 - 控制并发活动应用程序的数量。每个队列的限制与其队列容量和用户限制成正比。</description>
   </property>
 
   <property>
@@ -102,15 +97,11 @@
       队列的状态。可以是RUNNING或STOPPED之一。如果队列处于STOPPED状态，则无法将新应用程序提交给自身或其任何子队列。因此，如果根队列是STOPPED，则不能将任何应用程序提交给整个群集。
     </description>
   </property>
-
-
-
   <property>
     <name>yarn.scheduler.capacity.root.dev.capacity</name>
     <value>30</value>
     <description>每个级别的所有队列的容量总和必须等于100.如果有空闲资源，则队列中的应用程序可能比队列容量消耗更多资源，从而提供弹性。.</description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.root.dev.user-limit-factor</name>
     <value>1</value>
@@ -118,7 +109,7 @@
       队列容量的倍数，可配置为允许单个用户获取更多资源。默认情况下，此值设置为1可确保单个用户永远不会超过队列配置的容量，无论群集的空闲程度如何。
     </description>
   </property>
-
+  
   <property>
     <name>yarn.scheduler.capacity.root.dev.maximum-capacity</name>
     <value>40</value>

@@ -23,24 +23,24 @@
     </property>
     <property>
         <name>dfs.ha.namenodes.mshkcluster</name>
-        <value>c0,c1</value>
+        <value>node1,node2</value>
         <description>给定名称服务的前缀包含给定名称服务的逗号分隔的名称节点列表。</description>
     </property>
     <property>
         <name>dfs.namenode.rpc-address.mshkcluster.c0</name>
-        <value>c0:8020</value>
+        <value>node1:8020</value>
     </property>
     <property>
         <name>dfs.namenode.rpc-address.mshkcluster.c1</name>
-        <value>c1:8020</value>
+        <value>node2:8020</value>
     </property>
     <property>
         <name>dfs.namenode.http-address.mshkcluster.c0</name>
-        <value>c0:50070</value>
+        <value>node1:50070</value>
     </property>
     <property>
         <name>dfs.namenode.http-address.mshkcluster.c1</name>
-        <value>c1:50070</value>
+        <value>node2:50070</value>
     </property>
     <property>
         <name>dfs.namenode.shared.edits.dir</name>
