@@ -2,15 +2,8 @@
 
 . ./_head.sh
 
-
-# install zookeeper
-curl $apache_mirror/zookeeper/$zookeeper/$zookeeper.tar.gz
-tar -xzvf $zookeeper.tar.gz
-
-cp ./zookeeper/conf/zoo.cfg ./$zookeeper/conf/zoo.cfg
-
-#复制
-for N in $(seq 1 4); do scp -r $work_dir/_app/$zookeeper $user@node$N:$work_dir/_app/; done;
+#复制zookeeper conf
+for N in $(seq 1 4); do scp ./zookeeper/conf/zoo.cfg $user@node$N:$work_dir/_app/$zookeeper/conf; done;
 # for N in $(seq 1 4); do scp -r $zookeeper $user@node$N:$work_dir/_app/; done;
 
 #写入id
