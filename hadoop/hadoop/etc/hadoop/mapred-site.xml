@@ -43,15 +43,15 @@
     <property>
         <name>mapreduce.application.classpath</name>
         <value>
-          ~/work/_app/hadoop-3.2.1/etc/hadoop,
-          ~/work/_app/hadoop-3.2.1/share/hadoop/common/*,
-          ~/work/_app/hadoop-3.2.1/share/hadoop/common/lib/*,
-          ~/work/_app/hadoop-3.2.1/share/hadoop/hdfs/*,
-          ~/work/_app/hadoop-3.2.1/share/hadoop/hdfs/lib/*,
-          ~/work/_app/hadoop-3.2.1/share/hadoop/mapreduce/*,
-          ~/work/_app/hadoop-3.2.1/share/hadoop/mapreduce/lib/*,
-          ~/work/_app/hadoop-3.2.1/share/hadoop/yarn/*,
-          ~/work/_app/hadoop-3.2.1/share/hadoop/yarn/lib/*        
+          /home/parallels/work/_app/hadoop-3.2.1/etc/hadoop,
+          /home/parallels/work/_app/hadoop-3.2.1/share/hadoop/common/*,
+          /home/parallels/work/_app/hadoop-3.2.1/share/hadoop/common/lib/*,
+          /home/parallels/work/_app/hadoop-3.2.1/share/hadoop/hdfs/*,
+          /home/parallels/work/_app/hadoop-3.2.1/share/hadoop/hdfs/lib/*,
+          /home/parallels/work/_app/hadoop-3.2.1/share/hadoop/mapreduce/*,
+          /home/parallels/work/_app/hadoop-3.2.1/share/hadoop/mapreduce/lib/*,
+          /home/parallels/work/_app/hadoop-3.2.1/share/hadoop/yarn/*,
+          /home/parallels/work/_app/hadoop-3.2.1/share/hadoop/yarn/lib/*        
         </value>
     </property>
 </configuration>

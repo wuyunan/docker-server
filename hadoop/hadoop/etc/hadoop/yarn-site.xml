@@ -127,7 +127,7 @@
     </property>
     <property>
         <name>yarn.nodemanager.log-dirs</name>
-        <value>~/work/_data/hadoop-3.1.2/yarn/container-logs/</value>
+        <value>/home/parallels/work/_data/hadoop-3.1.2/yarn/container-logs/</value>
         <discription>nodemanager存放container日志的本地路径</discription>
     </property>
     <property>
