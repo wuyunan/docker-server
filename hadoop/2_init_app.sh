@@ -37,3 +37,10 @@ mv $scala $work_dir/_app/$scala
 
 echo "copy hadoop"
 for N in $(seq 2 4); do scp -r $work_dir/_app/$hadoop $user@node$N:$work_dir/_app/; done;
+for N in $(seq 2 4); do scp -r $work_dir/_app/$zookeeper $user@node$N:$work_dir/_app/; done;
+
+for N in $(seq 2 4); do scp -r $work_dir/_app/$hbase $user@node$N:$work_dir/_app/; done;
+for N in $(seq 2 4); do scp -r $work_dir/_app/$hive $user@node$N:$work_dir/_app/; done;
+
+for N in $(seq 2 4); do scp -r $work_dir/_app/$spark $user@node$N:$work_dir/_app/; done;
+for N in $(seq 2 4); do scp -r $work_dir/_app/$scala $user@node$N:$work_dir/_app/; done;
