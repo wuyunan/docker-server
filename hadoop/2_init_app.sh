@@ -35,4 +35,5 @@ wget https://downloads.lightbend.com/scala/$scala_version/$scala.tgz
 tar -xzvf $scala.tgz
 mv $scala $work_dir/_app/$scala
 
+echo "copy hadoop"
 for N in $(seq 2 4); do scp -r $work_dir/_app/$hadoop $user@node$N:$work_dir/_app/; done;
