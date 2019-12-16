@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+<!-- Site specific YARN configuration properties-->
+    <property>
+        <name>yarn.resourcemanager.recovery.enabled</name>
+        <value>true</value>
+        <description>启动后启用RM以恢复状态。如果为true，则必须指定yarn.resourcemanager.store.class。</description>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.store.class</name>
+        <value>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore</value>
+        <description>用作持久存储的类。</description>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.zk-address</name>
+        <value>c0:2181,c1:2181</value>
+        <description>ZooKeeper服务的地址，多个地址使用逗号隔开</description>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.ha.enabled</name>
+        <value>true</value>
+        <description>启用RM高可用性。启用时，（1）默认情况下，RM以待机模式启动，并在提示时转换为活动模式。（2）RM集合中的节点列在yarn.resourcemanager.ha.rm-ids中（3）如果明确指定了yarn.resourcemanager.ha.id，则每个RM的id来自yarn.resourcemanager.ha.id或者可以通过匹配yarn.resourcemanager.address。</description>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.ha.rm-ids</name>
+        <value>rm1,rm2</value>
+        <description>启用HA时群集中的RM节点列表。最少2个</description>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.webapp.address.rm1</name>
+        <value>c0:8088</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.webapp.address.rm2</name>
+        <value>c1:8088</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.cluster-id</name>
+        <value>mshk-yarn-ha</value>
+        <description>集群HA的id，用于在ZooKeeper上创建节点，区分使用同一个ZooKeeper集群的不同Hadoop集群</description>
+        </property>
+    <property>
+        <name>yarn.resourcemanager.hostname.rm1</name>
+        <value>c0</value>
+        <description>主机名</description>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.hostname.rm2</name>
+        <value>c1</value>
+        <description>主机名</description>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+        <description>reducer取数据的方式是mapreduce_shuffle</description>
+    </property>
+    <property>  
+        <name>yarn.nodemanager.resource.memory-mb</name>  
+        <value>2048</value>  
+        <discription>每个节点可用内存,单位MB</discription>  
+    </property> 
+    <property>  
+        <name>yarn.nodemanager.resource.cpu-vcores</name>  
+        <value>2</value>  
+        <discription>每个节点可用cpu</discription>
+    </property>   
+    <property>  
+        <name>yarn.scheduler.minimum-allocation-mb</name>  
+        <value>512</value>  
+        <discription>单个任务可申请最少内存，默认1024MB</discription>  
+    </property>  
+    <property>  
+        <name>yarn.scheduler.maximum-allocation-mb</name>  
+        <value>1024</value>  
+        <discription>单个任务可申请最大内存，默认8192MB</discription>  
+    </property> 
+    <property>  
+        <name>yarn.scheduler.minimum-allocation-vcores</name>  
+        <value>1</value>  
+        <discription>最小的cores 1 个，默认的就是一个</discription>  
+    </property> 
+    <property>  
+        <name>yarn.scheduler.minimum-allocation-vcores</name>  
+        <value>2</value>  
+        <discription>最多可分配的cores 2 个</discription>  
+    </property> 
+    <property>
+        <name>yarn.nodemanager.pmem-check-enabled</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.vmem-check-enabled</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>yarn.log-aggregation-enable</name>
+        <value>true</value>
+        <discription>是否开启聚合日志</discription>
+    </property>
+    <property>
+        <name>yarn.nodemanager.log-aggregation.roll-monitoring-interval-seconds</name>
+        <value>-1</value>
+        <discription>定义NM唤醒上载日志文件的频率。默认值为-1。默认情况下，应用程序完成后将上载日志。通过设置此配置，可以在应用程序运行时定期上载日志。可设置的最小滚动间隔秒数为3600。</discription>
+    </property>
+    <property>
+        <name>yarn.log.server.url</name>
+        <value>http://c0:19888/jobhistory/logs</value>
+        <discription> 配置日志服务器的地址</discription>
+    </property>
+    <property>
+        <name>yarn.log-aggregation.retain-seconds</name>
+        <value>-1</value>
+        <discription> 在删除聚合日志之前保留多长时间。-1禁用。单位是秒</discription>
+    </property>
+    <property>
+        <name>yarn.nodemanager.log-dirs</name>
+        <value>/home/work/_data/hadoop-3.1.2/yarn/container-logs/</value>
+        <discription>nodemanager存放container日志的本地路径</discription>
+    </property>
+    <property>
+        <name>yarn.nodemanager.remote-app-log-dir</name>
+        <value>/tmp/logs</value>
+        <discription>nodemanager存放container日志的本地路径</discription>
+    </property>
+</configuration>

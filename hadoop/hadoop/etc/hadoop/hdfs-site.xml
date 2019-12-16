@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>dfs.nameservices</name>
+        <value>mshkcluster</value>
+    </property>
+    <property>
+        <name>dfs.ha.namenodes.mshkcluster</name>
+        <value>c0,c1</value>
+        <description>给定名称服务的前缀包含给定名称服务的逗号分隔的名称节点列表。</description>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.mshkcluster.c0</name>
+        <value>c0:8020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.mshkcluster.c1</name>
+        <value>c1:8020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.http-address.mshkcluster.c0</name>
+        <value>c0:50070</value>
+    </property>
+    <property>
+        <name>dfs.namenode.http-address.mshkcluster.c1</name>
+        <value>c1:50070</value>
+    </property>
+    <property>
+        <name>dfs.namenode.shared.edits.dir</name>
+        <value>qjournal://c0:8485;c1:8485/mshkcluster</value>
+        <description>HA群集中多个名称节点之间的共享存储上的目录。此目录将由活动写入并由备用数据库读取，以保持命名空间同步。</description>
+    </property>
+    <property>
+        <name>dfs.client.failover.proxy.provider.mshkcluster</name>
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+        <description>配置Java类的名称，DFS客户端将使用该名称来确定哪个NameNode是当前的Active，以及哪个NameNode当前正在为客户端请求提供服务。</description>
+    </property>
+    <property>
+        <name>dfs.ha.automatic-failover.enabled</name>
+        <value>true</value>
+        <description>是否启用自动故障转移。</description>
+    </property>
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value>
+    </property>
+    <property>
+        <name>dfs.permissions.enabled</name>
+        <value>false</value>
+        <description>如果为“true”，则启用HDFS中的权限检查。如果为“false”，则关闭权限检查，但所有其他行为都保持不变。</description>
+    </property>
+    <property>
+        <name>dfs.journalnode.edits.dir</name>
+        <value>${hadoop.tmp.dir}/journalnode</value>
+        <description>指定JournalNode在本地磁盘存放数据的位置</description>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file://${hadoop.tmp.dir}/namenode</value>
+        <description>设置namenode存放路径</description>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file://${hadoop.tmp.dir}/datanode</value>
+        <description>设置datanode存放径路</description>
+    </property>
+    <property>
+        <name>dfs.blocksize</name>
+        <value>268435456</value>
+        <description>大型文件系统的HDFS块大小为256MB。</description>
+    </property>
+    <property>
+        <name>dfs.namenode.handler.count</name>
+        <value>100</value>
+        <description>namenode的服务器线程数</description>
+    </property>
+</configuration>

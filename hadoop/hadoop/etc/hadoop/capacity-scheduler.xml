@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+
+  <property>
+    <name>yarn.scheduler.capacity.maximum-applications</name>
+    <value>10000</value>
+    <description>
+      系统中可以同时处于运行和挂起状态的最大应用程序数。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.maximum-am-resource-percent</name>
+    <value>0.5</value>
+    <description>
+      群集中可用于运行应用程序主机的最大资源百分比 - 控制并发活动应用程序的数量。
+每个队列的限制与其队列容量和用户限制成正比。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.resource-calculator</name>
+    <value>org.apache.hadoop.yarn.util.resource.DefaultResourceCalculator</value>
+    <description>
+      The ResourceCalculator implementation to be used to compare
+      Resources in the scheduler.
+      The default i.e. DefaultResourceCalculator only uses Memory while
+      DominantResourceCalculator uses dominant-resource to compare
+      multi-dimensional resources such as Memory, CPU etc.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.queues</name>
+    <value>dev,test,prod</value>
+    <description>
+      CapacityScheduler有一个名为root的预定义队列。系统中的所有队列都是根队列的子节点。可以通过使用逗号分隔的子队列列表配置yarn.scheduler.capacity.root.queues来设置更多队列。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.test.capacity</name>
+    <value>10</value>
+    <description>每个级别的所有队列的容量总和必须等于100.如果有空闲资源，则队列中的应用程序可能比队列容量消耗更多资源，从而提供弹性。.</description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.test.user-limit-factor</name>
+    <value>1</value>
+    <description>
+      队列容量的倍数，可配置为允许单个用户获取更多资源。默认情况下，此值设置为1可确保单个用户永远不会超过队列配置的容量，无论群集的空闲程度如何。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.test.maximum-capacity</name>
+    <value>20</value>
+    <description>
+      最大队列容量，以百分比（％）表示为浮点数。这限制了队列中应用程序的弹性。默认为-1，禁用它。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.capacity</name>
+    <value>60</value>
+    <description>每个级别的所有队列的容量总和必须等于100.如果有空闲资源，则队列中的应用程序可能比队列容量消耗更多资源，从而提供弹性。.</description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.user-limit-factor</name>
+    <value>1</value>
+    <description>
+      队列容量的倍数，可配置为允许单个用户获取更多资源。默认情况下，此值设置为1可确保单个用户永远不会超过队列配置的容量，无论群集的空闲程度如何。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.maximum-capacity</name>
+    <value>70</value>
+    <description>
+      最大队列容量，以百分比（％）表示为浮点数。这限制了队列中应用程序的弹性。默认为-1，禁用它。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.state</name>
+    <value>RUNNING</value>
+    <description>
+      队列的状态。可以是RUNNING或STOPPED之一。如果队列处于STOPPED状态，则无法将新应用程序提交给自身或其任何子队列。因此，如果根队列是STOPPED，则不能将任何应用程序提交给整个群集。
+    </description>
+  </property>
+
+
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.capacity</name>
+    <value>30</value>
+    <description>每个级别的所有队列的容量总和必须等于100.如果有空闲资源，则队列中的应用程序可能比队列容量消耗更多资源，从而提供弹性。.</description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.user-limit-factor</name>
+    <value>1</value>
+    <description>
+      队列容量的倍数，可配置为允许单个用户获取更多资源。默认情况下，此值设置为1可确保单个用户永远不会超过队列配置的容量，无论群集的空闲程度如何。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.maximum-capacity</name>
+    <value>40</value>
+    <description>
+      最大队列容量，以百分比（％）表示为浮点数。这限制了队列中应用程序的弹性。默认为-1，禁用它。
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.default.acl_submit_applications</name>
+    <value>*</value>
+    <description>
+      The ACL of who can submit jobs to the default queue.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.default.acl_administer_queue</name>
+    <value>*</value>
+    <description>
+      The ACL of who can administer jobs on the default queue.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.default.acl_application_max_priority</name>
+    <value>*</value>
+    <description>
+      The ACL of who can submit applications with configured priority.
+      For e.g, [user={name} group={name} max_priority={priority} default_priority={priority}]
+    </description>
+  </property>
+   <property>
+     <name>yarn.scheduler.capacity.root.default.maximum-application-lifetime
+     </name>
+     <value>-1</value>
+     <description>
+        在几秒钟内提交到队列的应用程序的最长生命周期。任何小于或等于零的值都将被视为已禁用。对于此队列中的所有应用程序，这将是一个艰难的时间限制。如果配置了正值，那么提交到此队列的任何应用程序将在超过配置的生存期后被终止。用户还可以在应用程序提交上下文中指定每个应用程.但如果超过队列最长生命周期，则会覆盖用户生命周期。
+     </description>
+   </property>
+   <property>
+     <name>yarn.scheduler.capacity.root.default.default-application-lifetime
+     </name>
+     <value>-1</value>
+     <description>
+        在几秒钟内提交到队列的应用程序的默认生存期。任何小于或等于零的值都将被视为已禁用。如果用户尚未提交具有生命周期值的应用程序，则将采用此值。
+     </description>
+   </property>
+  <property>
+    <name>yarn.scheduler.capacity.node-locality-delay</name>
+    <value>40</value>
+    <description>
+      Number of missed scheduling opportunities after which the CapacityScheduler
+      attempts to schedule rack-local containers.
+      When setting this parameter, the size of the cluster should be taken into account.
+      We use 40 as the default value, which is approximately the number of nodes in one rack.
+      Note, if this value is -1, the locality constraint in the container request
+      will be ignored, which disables the delay scheduling.
+    </description>
+  </property>
+  <property>
+    <name>yarn.scheduler.capacity.rack-locality-additional-delay</name>
+    <value>-1</value>
+    <description>
+      Number of additional missed scheduling opportunities over the node-locality-delay
+      ones, after which the CapacityScheduler attempts to schedule off-switch containers,
+      instead of rack-local ones.
+      Example: with node-locality-delay=40 and rack-locality-delay=20, the scheduler will
+      attempt rack-local assignments after 40 missed opportunities, and off-switch assignments
+      after 40+20=60 missed opportunities.
+      When setting this parameter, the size of the cluster should be taken into account.
+      We use -1 as the default value, which disables this feature. In this case, the number
+      of missed opportunities for assigning off-switch containers is calculated based on
+      the number of containers and unique locations specified in the resource request,
+      as well as the size of the cluster.
+    </description>
+  </property>
+  <property>
+    <name>yarn.scheduler.capacity.queue-mappings</name>
+    <value></value>
+    <description>
+      A list of mappings that will be used to assign jobs to queues
+      The syntax for this list is [u|g]:[name]:[queue_name][,next mapping]*
+      Typically this list will be used to map users to queues,
+      for example, u:%user:%user maps all users to queues with the same name
+      as the user.
+    </description>
+  </property>
+  <property>
+    <name>yarn.scheduler.capacity.queue-mappings-override.enable</name>
+    <value>false</value>
+    <description>
+      If a queue mapping is present, will it override the value specified
+      by the user? This can be used by administrators to place jobs in queues
+      that are different than the one specified by the user.
+      The default is false.
+    </description>
+  </property>
+  <property>
+    <name>yarn.scheduler.capacity.per-node-heartbeat.maximum-offswitch-assignments</name>
+    <value>1</value>
+    <description>
+      Controls the number of OFF_SWITCH assignments allowed
+      during a node's heartbeat. Increasing this value can improve
+      scheduling rate for OFF_SWITCH containers. Lower values reduce
+      "clumping" of applications on particular nodes. The default is 1.
+      Legal values are 1-MAX_INT. This config is refreshable.
+    </description>
+  </property>
+  <property>
+    <name>yarn.scheduler.capacity.application.fail-fast</name>
+    <value>false</value>
+    <description>
+      Whether RM should fail during recovery if previous applications'
+      queue is no longer valid.
+    </description>
+  </property>
+</configuration>
