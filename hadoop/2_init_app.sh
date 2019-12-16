@@ -8,8 +8,8 @@ cd $work_dir/_src
 
 rm $hadoop.tar.gz
 rm $zookeeper.tar.gz
-rm $apache-$hive-bin.tar.gz
-rm $spark.tar.gz
+rm $hive.tar.gz
+rm $spark.tgz
 rm $hbase-bin.tar.gz
 rm $scala.tgz
 
@@ -24,7 +24,6 @@ tar -xzvf $zookeeper.tar.gz
 mv $zookeeper $work_dir/_app/
 
 # install hive
-
 wget $apache_mirror/hive/$hive/apache-$hive-bin.tar.gz
 mv apache-$hive-bin.tar.gz $hive.tar.gz
 tar -xzvf $hive.tar.gz
