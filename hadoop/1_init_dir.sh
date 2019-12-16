@@ -11,7 +11,7 @@ for N in $(seq 1 4); do ssh $user@node$N mkdir $work_dir/_data/{$hadoop,$zookeep
 for N in $(seq 1 4); do ssh $user@node$N mkdir $work_dir/_logs/{$hadoop,$zookeeper} -p; done;
 
 ## 在 Hadoop3.1.2 的 NameNode 上创建 HA 共享目录
-for N in $(seq 0 1); do ssh $user@node$N mkdir $work_dir/_data/$hadoop/{journalnode,ha-name-dir-shared} -p; done;
+for N in $(seq 1 2); do ssh $user@node$N mkdir $work_dir/_data/$hadoop/{journalnode,ha-name-dir-shared} -p; done;
 
 # 创建 Hbase1.4.9 需要的目录
 for N in $(seq 1 4); do ssh $user@node$N mkdir $work_dir/_logs/$hbase -p; done;
