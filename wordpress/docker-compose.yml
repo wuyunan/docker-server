@@ -19,7 +19,7 @@ services:
     db:
      image: mysql:5.7
      volumes:
-       - db_data:/var/lib/mysql
+       - /srv/docker/mysql:/var/lib/mysql
      ports:
        - "3306:3306"
      restart: always
@@ -33,5 +33,3 @@ services:
 
 networks:
     apinet:
-volumes:
-    db_data:
